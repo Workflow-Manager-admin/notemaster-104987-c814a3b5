@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { AuthProvider, useAuth } from './contexts/AuthContext';
+import AuthPage from './components/AuthPage';
 
-// PUBLIC_INTERFACE
-function App() {
+// Main App Content Component
+const AppContent = () => {
   const [theme, setTheme] = useState('light');
+  const { user, logout, loading } = useAuth();
 
   // Effect to apply theme to document element
   useEffect(() => {
@@ -16,6 +18,37 @@ function App() {
     setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
   };
 
+  // PUBLIC_INTERFACE
+  const handleLogout = () => {
+    logout();
+  };
+
+  if (loading) {
+    return (
+      <div className="App">
+        <div className="loading-container">
+          <div className="loading-spinner"></div>
+          <p>Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return (
+      <div className="App">
+        <button 
+          className="theme-toggle" 
+          onClick={toggleTheme}
+          aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+        >
+          {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
+        </button>
+        <AuthPage />
+      </div>
+    );
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -26,23 +59,28 @@ function App() {
         >
           {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
         </button>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          Current theme: <strong>{theme}</strong>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div className="user-info">
+          <span>Welcome, {user.name || user.email}!</span>
+          <button onClick={handleLogout} className="logout-btn">
+            Logout
+          </button>
+        </div>
+        <div className="notes-container">
+          <h1>My Notes</h1>
+          <p>Notes application will be implemented here.</p>
+          <p>You are successfully authenticated!</p>
+        </div>
       </header>
     </div>
+  );
+};
+
+// PUBLIC_INTERFACE
+function App() {
+  return (
+    <AuthProvider>
+      <AppContent />
+    </AuthProvider>
   );
 }
 
