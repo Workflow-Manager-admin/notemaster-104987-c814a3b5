@@ -31,7 +31,30 @@ class ApiClient {
       // Handle different response types
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
-        throw new Error(errorData.detail || `HTTP ${response.status}: ${response.statusText}`);
+        const error = new Error(errorData.detail || `HTTP ${response.status}: ${response.statusText}`);
+        error.status = response.status;
+        error.data = errorData;
+        
+        // Handle specific error cases
+        switch (response.status) {
+          case 401:
+            // Token expired or invalid
+            localStorage.removeItem('authToken');
+            localStorage.removeItem('user');
+            window.location.href = '/auth';
+            break;
+          case 403:
+            error.message = 'You do not have permission to perform this action';
+            break;
+          case 404:
+            error.message = 'The requested resource was not found';
+            break;
+          case 422:
+            error.message = 'Invalid data provided';
+            break;
+        }
+        
+        throw error;
       }
 
       // Handle empty responses
