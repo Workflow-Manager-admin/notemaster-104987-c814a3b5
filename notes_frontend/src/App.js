@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import AuthPage from './components/AuthPage';
+import NotesApp from './components/NotesApp';
 
 // Main App Content Component
 const AppContent = () => {
@@ -51,26 +52,20 @@ const AppContent = () => {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <button 
-          className="theme-toggle" 
-          onClick={toggleTheme}
-          aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-        >
-          {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
+      <button 
+        className="theme-toggle" 
+        onClick={toggleTheme}
+        aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+      >
+        {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
+      </button>
+      <div className="user-info">
+        <span>Welcome, {user.name || user.email}!</span>
+        <button onClick={handleLogout} className="logout-btn">
+          Logout
         </button>
-        <div className="user-info">
-          <span>Welcome, {user.name || user.email}!</span>
-          <button onClick={handleLogout} className="logout-btn">
-            Logout
-          </button>
-        </div>
-        <div className="notes-container">
-          <h1>My Notes</h1>
-          <p>Notes application will be implemented here.</p>
-          <p>You are successfully authenticated!</p>
-        </div>
-      </header>
+      </div>
+      <NotesApp />
     </div>
   );
 };
