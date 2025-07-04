@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { notesAPI } from '../utils/api';
+import { useNotes } from '../contexts/NotesContext';
 import NotesList from './NotesList';
 import NoteEditor from './NoteEditor';
 import NoteViewer from './NoteViewer';
@@ -8,48 +8,29 @@ import './NotesApp.css';
 
 // PUBLIC_INTERFACE
 const NotesApp = () => {
-  const [notes, setNotes] = useState([]);
-  const [filteredNotes, setFilteredNotes] = useState([]);
+  const { 
+    notes,
+    filteredNotes, 
+    loading, 
+    error,
+    searchQuery,
+    setSearchQuery,
+    loadNotes,
+    createNote,
+    updateNote,
+    deleteNote,
+    clearError
+  } = useNotes();
+
   const [selectedNote, setSelectedNote] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [isCreating, setIsCreating] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [error, setError] = useState(null);
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   // Load notes on component mount
   useEffect(() => {
     loadNotes();
-  }, []);
-
-  // Filter notes based on search query
-  useEffect(() => {
-    if (searchQuery.trim()) {
-      const filtered = notes.filter(note =>
-        note.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        note.content.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-      setFilteredNotes(filtered);
-    } else {
-      setFilteredNotes(notes);
-    }
-  }, [notes, searchQuery]);
-
-  // PUBLIC_INTERFACE
-  const loadNotes = async () => {
-    try {
-      setIsLoading(true);
-      setError(null);
-      const fetchedNotes = await notesAPI.getNotes();
-      setNotes(fetchedNotes);
-    } catch (err) {
-      console.error('Failed to load notes:', err);
-      setError('Failed to load notes. Please try again.');
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  }, [loadNotes]);
 
   // PUBLIC_INTERFACE
   const handleNoteSelect = (note) => {
@@ -77,22 +58,15 @@ const NotesApp = () => {
     try {
       let savedNote;
       if (isCreating) {
-        savedNote = await notesAPI.createNote(noteData);
-        setNotes(prevNotes => [savedNote, ...prevNotes]);
+        savedNote = await createNote(noteData);
       } else if (selectedNote) {
-        savedNote = await notesAPI.updateNote(selectedNote.id, noteData);
-        setNotes(prevNotes => 
-          prevNotes.map(note => 
-            note.id === selectedNote.id ? savedNote : note
-          )
-        );
+        savedNote = await updateNote(selectedNote.id, noteData);
       }
       setSelectedNote(savedNote);
       setIsEditing(false);
       setIsCreating(false);
     } catch (err) {
       console.error('Failed to save note:', err);
-      setError('Failed to save note. Please try again.');
     }
   };
 
@@ -103,8 +77,7 @@ const NotesApp = () => {
     }
 
     try {
-      await notesAPI.deleteNote(noteId);
-      setNotes(prevNotes => prevNotes.filter(note => note.id !== noteId));
+      await deleteNote(noteId);
       if (selectedNote && selectedNote.id === noteId) {
         setSelectedNote(null);
         setIsEditing(false);
@@ -112,7 +85,6 @@ const NotesApp = () => {
       }
     } catch (err) {
       console.error('Failed to delete note:', err);
-      setError('Failed to delete note. Please try again.');
     }
   };
 
@@ -135,7 +107,7 @@ const NotesApp = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
-  if (isLoading) {
+  if (loading) {
     return (
       <div className="notes-app">
         <div className="loading-container">
@@ -151,7 +123,7 @@ const NotesApp = () => {
       {error && (
         <div className="error-banner">
           <span>{error}</span>
-          <button onClick={() => setError(null)} className="error-close">×</button>
+          <button onClick={clearError} className="error-close">×</button>
         </div>
       )}
       

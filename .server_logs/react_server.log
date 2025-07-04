@@ -6,9 +6,9 @@ Attempting to bind to HOST environment variable: 0.0.0.0
 If this was unintentional, check that you haven't mistakenly set it in your shell.
 Learn more here: https://cra.link/advanced-config
 
-(node:6413) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(node:8039) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
 (Use `node --trace-deprecation ...` to show where the warning was created)
-(node:6413) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(node:8039) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
 Starting the development server...
 
 Compiled successfully!
@@ -28,3 +28,182 @@ webpack compiled successfully
 Compiling...
 Compiled successfully!
 webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src'
+ERROR in ./src/App.js 6:0-60
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src'
+
+ERROR in ./src/components/Layout.js 6:0-42
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src/components'
+
+ERROR in ./src/components/ProtectedRoute.js 6:0-44
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src/components'
+
+ERROR in ./src/routes/index.js 5:0-44
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src/routes'
+
+webpack compiled with 4 errors
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src'
+ERROR in ./src/App.js 6:0-60
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src'
+
+ERROR in ./src/components/Layout.js 6:0-42
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src/components'
+
+ERROR in ./src/components/ProtectedRoute.js 6:0-44
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src/components'
+
+ERROR in ./src/routes/index.js 5:0-44
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src/routes'
+
+webpack compiled with 4 errors
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src'
+ERROR in ./src/App.js 6:0-60
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src'
+
+ERROR in ./src/components/Layout.js 6:0-55
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src/components'
+
+ERROR in ./src/components/ProtectedRoute.js 6:0-44
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src/components'
+
+ERROR in ./src/routes/index.js 5:0-44
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src/routes'
+
+webpack compiled with 4 errors
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src'
+ERROR in ./src/App.js 6:0-60
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src'
+
+ERROR in ./src/components/Layout.js 6:0-55
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src/components'
+
+ERROR in ./src/components/ProtectedRoute.js 6:0-57
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src/components'
+
+ERROR in ./src/routes/index.js 5:0-44
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src/routes'
+
+webpack compiled with 4 errors
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src'
+WARNING in [eslint] 
+src/components/NotesApp.js
+  Line 2:10:  'useNotes' is defined but never used  no-unused-vars
+
+ERROR in ./src/App.js 6:0-60
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src'
+
+ERROR in ./src/components/Layout.js 6:0-55
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src/components'
+
+ERROR in ./src/components/ProtectedRoute.js 6:0-57
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src/components'
+
+ERROR in ./src/routes/index.js 5:0-44
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src/routes'
+
+ERROR in [eslint] 
+src/components/NotesApp.js
+  Line 22:3:    'useEffect' is not defined  no-undef
+  Line 27:3:    'useEffect' is not defined  no-undef
+  Line 44:34:   'notesAPI' is not defined   no-undef
+  Line 80:27:   'notesAPI' is not defined   no-undef
+  Line 83:27:   'notesAPI' is not defined   no-undef
+  Line 106:13:  'notesAPI' is not defined   no-undef
+
+Search for the keywords to learn more about each error.
+
+webpack compiled with 5 errors and 1 warning
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src'
+WARNING in [eslint] 
+src/components/NotesApp.js
+  Line 12:5:  'notes' is assigned a value but never used  no-unused-vars
+
+ERROR in ./src/App.js 6:0-60
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src'
+
+ERROR in ./src/components/Layout.js 6:0-55
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src/components'
+
+ERROR in ./src/components/ProtectedRoute.js 6:0-57
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src/components'
+
+ERROR in ./src/routes/index.js 5:0-44
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src/routes'
+
+webpack compiled with 4 errors and 1 warning
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src'
+LOG from webpack.FileSystemInfo
+<w> Managed item /home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/node_modules/react-router-dom isn't a directory or doesn't contain a package.json (see snapshot.managedPaths option)
++ 13 hidden lines
+
+WARNING in [eslint] 
+src/components/NotesApp.js
+  Line 12:5:  'notes' is assigned a value but never used  no-unused-vars
+
+ERROR in ./src/App.js 6:0-60
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src'
+
+ERROR in ./src/components/Layout.js 6:0-55
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src/components'
+
+ERROR in ./src/components/ProtectedRoute.js 6:0-57
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src/components'
+
+ERROR in ./src/routes/index.js 5:0-44
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/notemaster-104987-c814a3b5/notes_frontend/src/routes'
+
+webpack compiled with 4 errors and 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/NotesApp.js
+  Line 12:5:  'notes' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/NotesApp.js
+  Line 12:5:  'notes' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/NotesApp.js
+  Line 12:5:  'notes' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/NotesApp.js
+  Line 12:5:  'notes' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
